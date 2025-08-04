@@ -1,0 +1,14 @@
+*Guard* is a simple set of macros to deal with errors.
+
+It's heavily inspired by Zed Shaw's debug macros. Like, *heavily*.
+
+It depends on record, another one of my libs. So you have to get that too, and include it before including guard:
+
+#+begin_src C 
+
+#include "../path/to/record.h"
+#include "guard.h"
+
+#+end_src
+
+A real readme with examples if forthcoming.

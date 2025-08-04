@@ -22,7 +22,6 @@
 	if (!(a)) {                                                                \
 		rec_log(msg __VA_OPT__(, ) __VA_ARGS__);                              \
 		errno = 0;                                                             \
-		goto error;                                                            \
 	}
 
 #define guard_mem(a)                                                           \

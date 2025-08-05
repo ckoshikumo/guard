@@ -31,6 +31,20 @@
 		goto error;                                                            \
 	}
 
+#define guard_log_ret(a, msg, ...)                                             \
+	if (!(a)) {                                                                \
+		rec_log(msg __VA_OPT__(, ) __VA_ARGS__);                               \
+		errno = 0;                                                             \
+		return;                                                                \
+	}
+
+#define guard_log_retval(a, val, msg, ...)                                     \
+	if (!(a)) {                                                                \
+		rec_log(msg __VA_OPT__(, ) __VA_ARGS__);                               \
+		errno = 0;                                                             \
+		return val;                                                            \
+	}
+
 #define guard_mem(a)                                                           \
 	if (!(a)) {                                                                \
 		rec_error("Memory error");                                             \

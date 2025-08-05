@@ -61,7 +61,7 @@
 	{                                                                          \
 		rec_error(msg __VA_OPT__(, ) __VA_ARGS__);                             \
 		errno = 0;                                                             \
-		goto error;                                                            \
+		exit(EXIT_FAILURE);                                                    \
 	}
 
 #endif // INCLUDE_GUARD_H
